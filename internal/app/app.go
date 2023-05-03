@@ -3,7 +3,7 @@ package app
 import (
 	"fmt"
 
-	handler "github.com/IDL13/echo/smtp/internal/handlers"
+	handler "github.com/IDL13/smtp/internal/handlers"
 	"github.com/labstack/echo/v4"
 )
 
@@ -19,6 +19,7 @@ func New() (*App, error) {
 	a.echo = echo.New()
 
 	a.echo.GET("/", a.h.StartHandler)
+	a.echo.POST("/smtp", a.h.SmtpHandler)
 
 	return a, nil
 }
