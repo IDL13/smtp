@@ -3,7 +3,8 @@ package app
 import (
 	"fmt"
 
-	handler "github.com/IDL13/smtp/internal/handlers"
+	handler "smtp_server/internal/handlers"
+
 	"github.com/labstack/echo/v4"
 )
 

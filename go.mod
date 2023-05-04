@@ -1,4 +1,4 @@
-module github.com/IDL13/smtp
+module smtp_server
 
 go 1.18
 

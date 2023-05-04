@@ -5,8 +5,9 @@ import (
 	"net/http"
 	"net/smtp"
 
-	"github.com/IDL13/smtp/internal/config"
-	"github.com/IDL13/smtp/internal/unmarshal"
+	"smtp_server/internal/config"
+	"smtp_server/internal/unmarshal"
+
 	"github.com/labstack/echo/v4"
 )
 

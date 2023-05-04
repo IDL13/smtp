@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/IDL13/smtp/internal/app"
+	"smtp_server/internal/app"
 )
 
 func main() {
