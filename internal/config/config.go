@@ -9,6 +9,7 @@ import (
 
 type Config struct {
 	GmailKey string `yaml:"gmail_key"`
+	Gmail    string `yaml:"gmail"`
 }
 
 func GetConf() *Config {

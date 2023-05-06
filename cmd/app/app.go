@@ -1,16 +1,27 @@
 package main
 
 import (
-	"log"
+	"fmt"
+	"net"
 
-	"smtp_server/internal/app"
+	"smtp_server/pkg/api"
+	smtp "smtp_server/pkg/smtp"
+
+	"google.golang.org/grpc"
 )
 
 func main() {
-	a, err := app.New()
+	s := grpc.NewServer()
+	srv := &smtp.GRPCServer{}
+	api.RegisterAdderServer(s, srv)
+
+	fmt.Println("[SERVER STARTED]")
+	l, err := net.Listen("tcp", ":8081")
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
 
-	a.Run()
+	if err := s.Serve(l); err != nil {
+		fmt.Println(err)
+	}
 }
